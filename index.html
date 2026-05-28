@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analysis and SPDEs Paris 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --primary-text: #0f172a; 
+    --secondary-text: #1e293b;
+    --accent-color: #2563eb; 
+    --nav-color: #50817e; 
+  }
+
+  body, html {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    /* 0.3 is the opacity*/
+    background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(240, 244, 248, 0.85)), 
+                url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1920&q=80') center/cover fixed;
+    color: var(--secondary-text);
+  }
+
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    z-index: 1000;
+  }
+
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-brand {
+    font-family:  Georgia, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-text);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--nav-color);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.2s ease;
+  }
+
+  .nav-links a:hover {
+    color: var(--accent-color);
+  }
+
+  .main-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 80px; 
+    box-sizing: border-box;
+  }
+
+  /* ---  CARD STYLES --- */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .container {
+    max-width: 950px;
+    width: 90%;
+    margin: 4rem 0;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px); 
+    padding: 5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.8); 
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
+    animation: fadeUp 1.5s ease-out forwards;
+  }
+
+
+  h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700; 
+    color: var(--primary-text);
+    font-size: 4rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    letter-spacing: 1px;
+    line-height: 1.1;
+    display: inline-block;
+  }
+
+  .subtitle {
+    font-size: 1.3rem;
+    color: var(--secondary-text);
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+
+  .details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+    text-align: left; 
+  }
+
+  .details-box {
+    background: rgba(255, 255, 255, 0.5); 
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+  }
+
+  h3 {
+    margin: 0 0 1.2rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--primary-text);
+  }
+
+  .details-box p {
+    margin: 0;
+    line-height: 1.9;
+    font-weight: 400;
+    color: var(--primary-text);
+  }
+
+  .bio-link {
+    color: #50817e;
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px dotted #50817e;
+    transition: all 0.2s ease;
+  }
+
+  .bio-link:hover {
+    color: lightblue; 
+    border-bottom: 1px solid lightblue;
+  }
+
+  .abstract {
+    line-height: 1.9;
+    font-size: 1.15rem;
+    color: var(--primary-text);
+    text-align: justify; 
+    padding-top: 2rem;
+    border-top: 1px solid rgba(0,0,0,0.1); 
+  }
+
+  .logos-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(0,0,0,0.1);
+  }
+
+  .logos-section h4 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--secondary-text);
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+  }
+
+  .logos-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    flex-wrap: wrap; 
+  }
+
+  .sponsor-logo {
+    max-height: 70px; 
+    max-width: 250px;
+    object-fit: contain;
+    opacity: 0.6;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .sponsor-logo:hover {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 900px) {
+    h1 { font-size: 2.8rem; }
+    .container { padding: 3rem; margin: 2rem 0; }
+    .details-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .logos-container { gap: 2rem; }
+    
+    /* smaller screens */
+    .nav-container { flex-direction: column; gap: 1rem; padding: 1rem; }
+    .nav-links { flex-wrap: wrap; justify-content: center; gap: 1rem; }
+    .main-wrapper { padding-top: 120px; }
+  }
+</style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">Analysis &amp SPDEs 2026</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="program.html">Program</a>
+        <a href="abstracts.html">Abstracts</a>
+        <!-- <a href="participants.html">Participants</a> -->
+        <a href="registration.html">Registration</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="main-wrapper">
+    <div class="container">
+      <h1>Analytical Methods<br>in SPDEs</h1>
+      <div class="subtitle">New Perspectives on the Analysis of Singular Stochastic PDEs</div>
+
+      <div class="abstract">
+        <p>In recent years, there has been growing interest in the study of singular stochastic partial differential equations,
+         which find applications in a wide range of fields, notably in the stochastic quantization of field theories and in the description of the critical behavior of complex systems.
+        This 3-day workshop will focus on innovative analytical approaches to the theory of solutions for a broad class of singular SPDEs, featuring two mini-courses by renowned experts of the field and seminars from young researchers.
+        </p>
+      </div>
+
+      <div class="details-grid">
+        <div class="details-box">
+          <h3>Conference Details</h3>
+          <p><strong>Date:</strong> June 3 - 5, 2026<br>
+             <strong>Location:</strong> Paris, France<br>
+             <strong>Venue:</strong> Campus Pierre et Marie Curie, 4 Place Jussieu</p>
+        </div>
+        <div class="details-box">
+          <h3>Speakers</h3>
+          <p>
+            <a href="https://www.uni-muenster.de/FB10srvi/persdb/MM-member.php?id=1681" class="bio-link">Prof. Dr. Hendrik Weber</a><br>
+            <a href="https://pawelduch.github.io/" class="bio-link">Dr. Paweł Duch</a><br>
+            <a href="https://sites.google.com/view/lucasbroux/accueil/" class="bio-link">Dr. Lucas Broux</a><br>
+            <a href="https://sites.google.com/view/rhys-steele" class="bio-link">Dr. Rhys Steele</a>
+          </p>
+        </div>
+      </div>
+
+    <footer>
+      <div class="logos-section">
+        <h4>Sponsored by</h4>
+        <div class="logos-container">
+          <img class="sponsor-logo" src="img/logo lpsm.png" alt="LPSM Paris Logo">
+          <img class="sponsor-logo" src="img/UniversiteParisCite_logo_Faculty_Sciences_couleur_RVB.png" alt="UPC Logo">
+          <img class="sponsor-logo" src="img/Logo_of_Sorbonne_University.svg.png" alt="Sorbonne Logo">
+          <img class="sponsor-logo" src="img/LOGO_CNRS_BLEU.png" alt="CNRS Logo">
+        </div>
+      </div>
+    </footer>
+    </div>
+  </div>
+
+</body>
+</html>

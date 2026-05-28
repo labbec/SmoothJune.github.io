@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Program</title>
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    </head>
+<style>
+:root {
+    --primary-text: #0f172a; 
+    --secondary-text: #1e293b;
+    --accent-color: #2563eb; 
+    --nav-color: #50817e;
+  }
+
+  .glass-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    z-index: 1030;
+  }
+
+  .glass-navbar .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 32px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .glass-navbar .nav-brand {
+    font-family:  Georgia, sans-serif;
+    font-size: 24px; 
+    font-weight: 700;
+    color: var(--primary-text);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    line-height: 1;
+  }
+  
+  .glass-navbar .nav-brand:hover {
+    color: var(--primary-text);
+    text-decoration: none;
+  }
+
+  .glass-navbar .nav-links {
+    display: flex;
+    gap: 32px; 
+    margin: 0;
+    padding: 0;
+    align-items: center;
+  }
+
+  .glass-navbar .nav-links a {
+    text-decoration: none;
+    color: var(--nav-color);
+    font-weight: 600;
+    font-size: 15px; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.2s ease;
+  }
+
+  .glass-navbar .nav-links a:hover {
+    color: var(--accent-color);
+    text-decoration: none;
+  }
+
+  .logos-section {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    margin-left: 1rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(0,0,0,0.1);
+  }
+
+  .logos-section h4 {
+    font-size: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--secondary-text);
+    margin-top: 0;
+    margin-bottom: 24px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .logos-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 64px;
+    flex-wrap: wrap; 
+  }
+
+  .sponsor-logo {
+    max-height: 70px; 
+    max-width: 250px;
+    object-fit: contain;
+    opacity: 0.6;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .sponsor-logo:hover {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  .table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    margin: 2rem 0;
+  }
+
+  .program-table {
+    width: 95%;
+    border-collapse: collapse;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: #ffffff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    border-style: hidden; 
+  }
+
+  .program-table th, .program-table td {
+    border: 1px solid #cbd5e1;
+    padding: 14px 16px;
+    text-align: center;
+    font-size: 15px;
+  }
+
+  .program-table th {
+    background-color: #f8fafc;
+    font-weight: 700;
+    color: var(--primary-text);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+  }
+
+  .time-col {
+    font-weight: 600;
+    color: var(--secondary-text);
+    background-color: #f8fafc;
+    white-space: nowrap; 
+  }
+
+  .mc1 { background-color: #ffc000; color: #000; font-weight: 500; }
+  .mc2 { background-color: #92d050; color: #000; font-weight: 500; }
+  .talk1 { background-color: #b7dee8; color: #000; font-weight: 500; }
+  .talk2 { background-color: #FF7F7F; color: #000; font-weight: 500; }
+  .talk3 { background-color: violet; color: #000; font-weight: 500; }
+  .talk4 { background-color: blue; color: #000; font-weight: 500; }
+  
+  .break { 
+    font-style: italic; 
+    color: #64748b; 
+    background-color: #ffffff;
+  }
+  .schedule-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 10px;
+    padding: 20px;
+    background: #f8fafc;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    color: var(--primary-text);
+    justify-content: center;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 1px solid rgba(0,0,0,0.1);
+  }
+
+  .color-mc1 { background-color: #ffc000; }
+  .color-mc2 { background-color: #92d050; }
+  .color-talk1 { background-color: #b7dee8; }
+  .color-talk2 { background-color: #FF7F7F; }
+  .color-talk3 { background-color: violet; }
+  .color-talk4 { background-color: blue; }
+
+  /* Responsive Adjustments */
+  @media (max-width: 900px) {
+    .logos-container { gap: 32px; }
+    .glass-navbar .nav-container { flex-direction: column; gap: 16px; padding: 16px; }
+    .glass-navbar .nav-links { flex-wrap: wrap; justify-content: center; gap: 16px; }
+  }
+</style>
+<body>
+
+    <nav class="glass-navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Analysis &amp SPDEs 2026</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="program.html">Program</a>
+                <a href="abstracts.html">Abstracts</a>
+                <!-- <a href="participants.html">Participants</a> -->
+                <a href="registration.html">Registration</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="intro-header" style="background-image: url('img/green_background.jpg'); margin-top: 0; padding-top: 60px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="page-heading">
+                        <h1> Program </h1>
+                        <hr class="small">
+                        <span class="subheading"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="abstract">
+            <p><strong>The event will be structured as follows:</strong></p>
+        </div>
+    </div>
+    <div class="table-responsive">
+    <table class="program-table">
+        <thead>
+        <tr>
+            <th></th>
+            <th>Day 1</th>
+            <th>Day 2</th>
+            <th>Day 3</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="time-col">9:30 / 10:30</td>
+            <td class="mc1"><a href="abstracts.html#mc-weber">Mini-course 1</a></td>
+            <td class="mc2"><a href="abstracts.html#mc-duch">Mini-course 2</a></td>
+            <td class="mc1"><a href="abstracts.html#mc-weber">Mini-course 1</a></td>
+        </tr>
+        <tr>
+            <td class="time-col">10:30 / 10:45</td>
+            <td class="break">Coffee break</td>
+            <td class="break">Coffee break</td>
+            <td class="break">Coffee break</td>
+        </tr>
+        <tr>
+            <td class="time-col">10:45 / 11:45</td>
+            <td class="mc2"><a href="abstracts.html#mc-duch">Mini-course 2</a></td>
+            <td class="mc1"><a href="abstracts.html#mc-weber">Mini-course 1</a></td>
+            <td class="mc2"><a href="abstracts.html#mc-duch">Mini-course 2</a></td>
+        </tr>
+        <tr>
+            <td class="time-col">11:50 / 12:20</td>
+            <td class="talk3"><a href="abstracts.html#st-Leguerch">Thomas Le Guerch</a></td>
+            <td class="talk3"><a href="abstracts.html#st-Bonicelli">Alberto Bonicelli</a></td>
+            <!-- <td class="talk3"><a href="">Short Talk 5</a></td> -->
+        </tr>
+        <tr>
+            <td class="time-col">12:30 / 14:00</td>
+            <td class="break">Lunch break</td>
+            <td class="break">Lunch break</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="time-col">14:00 / 15:00</td>
+            <td class="mc1"><a href="abstracts.html#mc-duch">Mini-course 1</a></td>
+            <td class="mc2"><a href="abstracts.html#mc-weber">Mini-course 2</a></td>
+        </tr>
+        <tr>
+            <td class="time-col">15:10 / 16:00</td>
+            <td class="talk1"><a href="">Lucas Broux</a></td>
+            <td class="talk2"><a href="abstracts.html#st-Steele">Rhys Steele</a></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="time-col">16:00 / 16:15</td>
+            <td class="break">Coffee break</td>
+            <td class="break">Coffee break</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="time-col">16:15 / 16:45</td>
+            <td class="talk3"><a href="abstracts.html#st-Agabiti">Lorenzo Agabiti</a></td>
+            <td class="talk3"><a href="abstracts.html#st-Jaffard">Thomas Jaffard</a></td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
+    
+    <div class="schedule-legend">
+        <div class="legend-item">
+            <div class="legend-color color-mc1"></div>
+        <span><strong>Mini-course 1:</strong> <a href="https://www.uni-muenster.de/FB10srvi/persdb/MM-member.php?id=1681">Hendrik Weber</a></span>
+        </div>
+  
+        <div class="legend-item">
+            <div class="legend-color color-mc2"></div>
+            <span><strong>Mini-course 2:</strong> <a href="https://pawelduch.github.io/">Paweł Duch</a></span>
+        </div>
+  
+        <!-- <div class="legend-item">
+            <div class="legend-color color-talk1"></div>
+            <span><strong>Talk 1:</strong> <a href="">Lucas Broux</a></span>
+        </div> -->
+        <!-- <div class="legend-item">
+            <div class="legend-color color-talk2"></div>
+            <span><strong>Talk 2:</strong> <a href="">Rhys Steele</a></span>
+        </div> -->
+        <!-- <div class="legend-item">
+            <div class="legend-color color-talk3"></div>
+            <span><strong>Short Talks:</strong> <a href="">Young Researchers</a></span>
+        </div> -->
+        <!-- <div class="legend-item">
+            <div class="legend-color color-talk4"></div>
+            <span><strong>Talk 4:</strong> <a href="">Various Speakers</a></span>
+        </div> -->
+    </div>
+
+    <footer>
+        <div class="logos-section">
+        <h4>Sponsored by</h4>
+        <div class="logos-container">
+          <img class="sponsor-logo" src="img/logo lpsm.png" alt="LPSM Paris Logo">
+          <img class="sponsor-logo" src="img/UniversiteParisCite_logo_Faculty_Sciences_couleur_RVB.png" alt="UPC Logo">
+          <img class="sponsor-logo" src="img/Logo_of_Sorbonne_University.svg.png" alt="Sorbonne Logo">
+          <img class="sponsor-logo" src="img/LOGO_CNRS_BLEU.png" alt="CNRS Logo">
+        </div>
+      </div>
+    </footer>
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <script src="js/clean-blog.min.js"></script>
+
+</body>
+
+</html>
