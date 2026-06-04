@@ -245,15 +245,14 @@
 </style>
 <body>
 
-    <nav class="glass-navbar">
+  <nav class="glass-navbar">
         <div class="nav-container">
-            <a href="index.html" class="nav-brand">Analysis &amp SPDEs 2026</a>
+            <a href="index.html" class="nav-brand">ANR Smooth - Conference Paris 2026</a>
             <div class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="program.html">Program</a>
                 <a href="abstracts.html">Abstracts</a>
-                <!-- <a href="participants.html">Participants</a> -->
-                <a href="registration.html">Registration</a>
+                <a href="participants.html">Participants</a>
             </div>
         </div>
     </nav>
@@ -287,42 +286,18 @@
                 <div class="talks-list">
 
                     <!-- MINI-COURSE 1 -->
-                    <article class="talk-box mc2" id="mc-weber">
-                        <span class="talk-tag">Mini-course 1</span>
-                        <h2 class="talk-title">Global well-posedness for singular SPDEs</h2>
+                    <article class="talk-box mc2" id="mc-bringmann">
+                        <span class="talk-tag">Mini-course</span>
+                        <h2 class="talk-title">On the global well-posedness of singular SPDEs</h2>
                         <p class="talk-speaker">
-                            <a href="https://www.uni-muenster.de/FB10srvi/persdb/MM-member.php?id=1681">Hendrik Weber</a>
-                            — University of Münster
+                            <a href="https://sites.google.com/view/bbringmann/home">Bjoern Bringmann</a>
+                            — Princeton University
                         </p>
                         <p class="talk-abstract">
-                            Initiated in groundbreaking works by Hairer and Gubinelli, the theory of Parabolic Stochastic PDEs has made spectacular progress over the last few years.
-                            A systematic solution theory for various interesting and previously intractable equations from Mathematical Physics is now available.
-                            Examples include the KPZ equation and the stochastic quantisation equations for the 3D $\Phi^4$ and Yang Mills measures.
-                            These solutions have been shown to arise as scaling limits of discrete models of Statistical Mechanics and to display interesting phenomena, such as phase transitions, in their own right.
-                            <br><br>
-                            In these lectures I will review some aspects of these developments. The main focus will be the question of global existence / a priori bounds for solutions.
-                            The first works on regularity structures and paracontrolled distributions were mostly concerned with constructing local-in-time solutions using a fixed point argument in a suitable space of distributions.
-                            The focus was primarily on the description of solutions on small scales and dealing with  "infinite terms" which arise when applying non-linear functions to distributions.
-                            The matching a priori bounds were only developed more recently, among others in a series of papers by Mourrat, Moinat, Chandra, Feltes, Esquivel and me.
-                            I will explain these results, the main challenges and the arguments that permitted to overcome them.
+							The goal of these lectures is to study the global well-posedness of singular SPDEs. As a warm-up, we first prove the global well-posedness of the $\Phi^4_2$-model. We then turn to the global well-posedness of the stochastic Abelian-Higgs model, which is a stochastic geometric evolution equation. In this context, we also discuss covariant monotonicity formulas and covariant stochastic objects.
                         </p>
                     </article>
-                    <!-- MINI-COURSE 2 -->
-                    <article class="talk-box mc1" id="mc-duch">
-                        <span class="talk-tag">Mini-course 2</span>
-                        <h2 class="talk-title">Introduction to the flow equation approach to singular stochastic PDEs</h2>
-                        <p class="talk-speaker">
-                            <a href="https://pawelduch.github.io/">Paweł Duch</a>
-                            - EPFL
-                        </p>
-                        <p class="talk-abstract">
-                            This course offers a gentle introduction to the flow equation approach to singular stochastic partial differential equations (SPDEs).
-                            The method provides a flexible framework for analyzing a wide class of such equations, including those involving fractional Laplacians across the full subcritical regime.
-                            Inspired by the Wilsonian renormalization group, the approach focuses on a coarse-grained process that captures the behavior of solutions across spatial scales.
-                            Rather than analyzing the original equation directly, one studies an effective equation whose nonlinear component evolves with scale according to the flow equation, analogous to the Polchinski equation in quantum field theory.
-                            Within this framework, renormalization amounts to selecting appropriate boundary conditions for the flow equation, which can be implemented through an inductive argument.
-                        </p>
-                    </article>
+
 
                     <!-- TALK 1 -->
                     <!-- <article class="talk-box tk1">
@@ -340,84 +315,79 @@
                     </article> -->
 
                     <!-- TALK 2 -->
-                    <article class="talk-box tk2" id="st-Steele">
-                        <span class="talk-tag">Talk 2</span>
-                        <h2 class="talk-title">Recent Progress on BPHZ Theorems in Regularity Structures</h2>
+                    <article class="talk-box tk2" id="st-Arm">
+                        <span class="talk-tag">Talk</span>
+                        <h2 class="talk-title"></h2>
                         <p class="talk-speaker">
-                            <a href="https://sites.google.com/view/rhys-steele">Rhys Steele</a>
-                            — Max Planck Institute for Mathematics in the Sciences
+                            <a href="https://www.scottnarmstrong.com/">Scott Armstrong</a>
+                            — Sorbonne University and CNRS
                         </p>
                         <p class="talk-abstract">
-                            Modern pathwise approaches for subcritical singular stochastic PDEs obtain local-in-time
-                            solutions by encoding the probabilistic aspects of the problem in a random element of some nonlinear
-                            space of distributions. In regularity structures, this non-linear data is called the model.
-                            The construction of an appropriate model from a typical driving noise is one of the central challenges
-                            in the theory and is the step in which one must perform a suitable renormalisation.
-                            In recent years, there has been significant progress on general constructions
-                            of renormalised models in regularity structures. In this talk, I will review 
-                            this progress and discuss ongoing projects building on these new ideas.
-                        </p>
-                    </article>
-                    <article class="talk-box st" id="st-Leguerch">
-                        <span class="talk-tag">Short talk 1</span>
-                        <h2 class="talk-title">From skew to reflected SPDEs</h2>
-                        <p class="talk-speaker">
-                            <a href="https://www.lpsm.paris/users/leguerch/index">Thomas Le Guerch</a>
-                            — Sorbonne University
-                        </p>
-                        <p class="talk-abstract">
-                            Skew Brownian motion (SBM) is a one-dimensional diffusion that behaves like standard Brownian motion away from $0$,
-                            but whose crossings at 0 are asymmetric: upon hitting $0$, it resumes on the positive side with probability $p$.
-                            It can be characterised as the unique strong solution to a stochastic equation driven by additive Brownian motion
-                            with drift given by $2p-1$ times the symmetric local time at $0$ of the solution.
-                            When $p=1$, the solution remains nonnegative and the corresponding process is the reflected Brownian motion (RBM).
-                            The RBM satisfies a stochastic equation with reflection. In the context of SPDEs, the analogue of this skew equation
-                            is highly singular and involves a Dirac delta nonlinearity acting on the solution. 
-                            In a joint work with C. Labbé and L. Zambotti, we prove that the solution of a skew SPDE
-                            converges to the solution of a reflected SPDE.
-                        </p>
-                    </article>
-                    <article class="talk-box st" id="st-Agabiti">
-                        <span class="talk-tag">Short talk 2</span>
-                        <h2 class="talk-title">A priori estimates for rough ODEs in the full range of regularity, Part 1</h2>
-                        <p class="talk-speaker">
-                            <a href="https://lorenzoagabiti.github.io/">Lorenzo Agabiti</a>
-                            — Sorbonne University
-                        </p>
-                        <p class="talk-abstract">
-                            Since the seminal work of Lyons, rough path theory has emerged as a powerful framework for solving ordinary
-                             differential equations (ODEs) driven by signals of low regularity,
-                            where classical methods fail. In the first part of this joint talk,
-                            we introduce Davie's approach to rough ODEs within the context of branched rough
-                            paths. Our primary focus is on deriving robust a priori estimates for the solutions,
-                            with the ultimate goal of covering the full spectrum of driver regularity.
-                            Achieving this requires establishing a sewing bound on increments and developing 
-                            an explicit algebraic formula for the remainders, which fundamentally relies on 
-                            the pre-Lie algebraic structure of forest grafting.
 
                         </p>
                     </article>
-                    <article class="talk-box st" id="st-Bonicelli">
-                        <span class="talk-tag">Short talk 3</span>
-                        <h2 class="talk-title">A priori estimates for rough ODEs in the full range of regularity, Part 2</h2>
+                    
+                    <article class="talk-box tk2" id="st-Deya">
+                        <span class="talk-tag">Talk</span>
+                        <h2 class="talk-title"></h2>
                         <p class="talk-speaker">
-                            <a href="https://albertobonicelli.github.io/">Alberto Bonicelli</a>
+                            <a href="https://iecl.univ-lorraine.fr/membre-iecl/deya-aurelien/">Aurelien Deya</a>
+                            — Université de Lorraine and CNRS
+                        </p>
+                        <p class="talk-abstract">
+
+                        </p>
+                    </article>
+                    
+                                        <article class="talk-box tk2" id="st-Eul">
+                        <span class="talk-tag">Talk</span>
+                        <h2 class="talk-title"></h2>
+                        <p class="talk-speaker">
+                            <a href="https://hugoeulry.github.io/">Hugo Eulry</a>
+                            — ENS Lyon
+                        </p>
+                        <p class="talk-abstract">
+
+                        </p>
+                    </article>
+                    
+                                        <article class="talk-box tk2" id="st-Hou">
+                        <span class="talk-tag">Talk</span>
+                        <h2 class="talk-title"></h2>
+                        <p class="talk-speaker">
+                            <a href="https://sites.google.com/view/yingtong-hou">Yingtong Hou</a>
+                            — Université de Lorraine
+                        </p>
+                        <p class="talk-abstract">
+
+                        </p>
+                    </article>
+                    
+                                        <article class="talk-box tk2" id="st-Noh">
+                        <span class="talk-tag">Talk</span>
+                        <h2 class="talk-title"></h2>
+                        <p class="talk-speaker">
+                            <a href="https://www.lpsm.paris/users/nohra/index">Elias Nohra</a>
                             — Sorbonne University
                         </p>
                         <p class="talk-abstract">
-                            Building on the foundational a priori estimates for rough ODEs introduced in Part 1, 
-                            the second half of this joint talk addresses the challenge of relaxing the boundedness
-                            assumptions on the coefficients of the approximated solution.
-                            To effectively handle the Lipschitz-continuous case, we require a refined
-                            representation of the remainder that exclusively encompasses the gradients
-                            of the coefficients. Because manual derivation becomes intractable at arbitrarily high approximation orders,
-                            we employ advanced algebraic tools. Specifically, we introduce a novel representation
-                            of the Guin-Oudom extension of grafting using binary trees.
-                            Finally, we demonstrate how this algebraic remainder formula yields the 
-                            precise a priori estimates necessary to establish well-posedness across 
-                            a broad class of equations.
+
                         </p>
                     </article>
+                    
+                                        <article class="talk-box tk2" id="st-Tzve">
+                        <span class="talk-tag">Talk</span>
+                        <h2 class="talk-title"></h2>
+                        <p class="talk-speaker">
+                            <a href="https://tzvetkov.perso.math.cnrs.fr/">Nikolay Tzvetkov</a>
+                            — ENS Lyon
+                        </p>
+                        <p class="talk-abstract">
+
+                        </p>
+                    </article>
+                    
+                    
 
                 </div>
             </div>
@@ -428,16 +398,19 @@
 
     <!-- Footer -->
     <footer>
-        <div class="logos-section">
+      <div class="logos-section">
         <h4>Sponsored by</h4>
         <div class="logos-container">
           <img class="sponsor-logo" src="img/logo lpsm.png" alt="LPSM Paris Logo">
           <img class="sponsor-logo" src="img/UniversiteParisCite_logo_Faculty_Sciences_couleur_RVB.png" alt="UPC Logo">
           <img class="sponsor-logo" src="img/Logo_of_Sorbonne_University.svg.png" alt="Sorbonne Logo">
           <img class="sponsor-logo" src="img/LOGO_CNRS_BLEU.png" alt="CNRS Logo">
+          <img class="sponsor-logo" src="img/ANR-logo-2021-sigle.jpg" alt="ANR Logo">
         </div>
       </div>
     </footer>
+    </div>
+  </div>
 
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
